@@ -4,13 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Objects;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class AvailableOptions implements Comparable<AvailableOptions> {
+public class AvailableOption implements Comparable<AvailableOption> {
     private int id;
     private int price;
     private String departure;
@@ -19,11 +17,11 @@ public class AvailableOptions implements Comparable<AvailableOptions> {
 
 
     @Override
-    public int compareTo(AvailableOptions o) {
+    public int compareTo(AvailableOption o) {
         return price - o.price;
     }
 
-    public AvailableOptions(String departure, String arrival) {
+    public AvailableOption(String departure, String arrival) {
         this.departure = departure;
         this.arrival = arrival;
     }

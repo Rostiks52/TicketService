@@ -5,26 +5,24 @@ import java.util.Arrays;
 import ru.netology.ticketinfo.*;
 import ru.netology.repository.*;
 
-import java.util.Arrays;
-
 
 public class OptionsManager {
 
     private OptionsRepository repository = new OptionsRepository();
 
 
-    public void add(AvailableOptions item) {
+    public void add(AvailableOption item) {
         repository.save(item);
     }
 
-    public AvailableOptions[] getAll(String from, String to) {
+    public AvailableOption[] getAll(String from, String to) {
 
         return repository.findAll();
     }
 
 
-    public AvailableOptions[] findByLocation(String from, String to) {
-        AvailableOptions[] result = repository.findByLocation(from, to);
+    public AvailableOption[] findByLocation(String from, String to) {
+        AvailableOption[] result = repository.findByLocation(from, to);
         Arrays.sort(result);
         return result;
     }
